@@ -57,14 +57,14 @@ namespace SleepData
             {
                 // TODO: parse data file
                 StreamReader readData = new StreamReader("data.txt");
-                while (readData.EndOfStream) {
+                while (!readData.EndOfStream) {
                     string data = readData.ReadLine();
                     string[] split = data.Split(',');
-                    string[] datasplit = data.Split('|');
+                    string[] datasplit = split[1].Split('|');
                     Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", split[0]);
                     Console.WriteLine("Mo Tu We Th Fr Sa Su");
                     Console.WriteLine("-- -- -- -- -- -- --");
-                    Console.WriteLine(datasplit[0], datasplit[1], datasplit[2], datasplit[3], datasplit[4], datasplit[5], datasplit[6]);
+                    Console.WriteLine(datasplit[0] + datasplit[1] + datasplit[2] + datasplit[3] + datasplit[4] + datasplit[5] + datasplit[6]);
                 }
                 readData.Close();
             }
