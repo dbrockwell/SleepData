@@ -67,10 +67,12 @@ namespace SleepData
                         intData[i] = Int32.Parse(datasplit[i]);
                     }
                     int total = intData[0] + intData[1] + intData[2] + intData[3] + intData[4] + intData[5] + intData[6];
+                    double totalDouble = Convert.ToDouble(total);
+                    double average = totalDouble / 7;
                     Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", parseDate);
-                    Console.WriteLine("Mo Tu We Th Fr Sa Su Tot");
-                    Console.WriteLine("-- -- -- -- -- -- -- ---");
-                    Console.WriteLine("{0,2} {1,2} {2,2} {3,2} {4,2} {5,2} {6,2} {7,3}", datasplit[0], datasplit[1], datasplit[2], datasplit[3], datasplit[4], datasplit[5], datasplit[6], total);
+                    Console.WriteLine("Mo Tu We Th Fr Sa Su Tot Avg");
+                    Console.WriteLine("-- -- -- -- -- -- -- --- ---");
+                    Console.WriteLine("{0,2} {1,2} {2,2} {3,2} {4,2} {5,2} {6,2} {7,3} {8,3:n1}", datasplit[0], datasplit[1], datasplit[2], datasplit[3], datasplit[4], datasplit[5], datasplit[6], total, average);
                 }
                 readData.Close();
             }
