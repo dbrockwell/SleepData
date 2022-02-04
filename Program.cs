@@ -61,10 +61,11 @@ namespace SleepData
                     string data = readData.ReadLine();
                     string[] split = data.Split(',');
                     string[] datasplit = split[1].Split('|');
-                    Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", split[0]);
+                    var parseDate = DateTime.Parse(split[0]);
+                    Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", parseDate);
                     Console.WriteLine("Mo Tu We Th Fr Sa Su");
                     Console.WriteLine("-- -- -- -- -- -- --");
-                    Console.WriteLine(datasplit[0] + datasplit[1] + datasplit[2] + datasplit[3] + datasplit[4] + datasplit[5] + datasplit[6]);
+                    Console.WriteLine("{0,2} {1,2} {2,2} {3,2} {4,2} {5,2} {5,2}", datasplit[0], datasplit[1], datasplit[2], datasplit[3], datasplit[4], datasplit[5], datasplit[6]);
                 }
                 readData.Close();
             }
