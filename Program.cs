@@ -66,6 +66,7 @@ namespace SleepData
                     Console.WriteLine("-- -- -- -- -- -- --");
                     Console.WriteLine(datasplit[0], datasplit[1], datasplit[2], datasplit[3], datasplit[4], datasplit[5], datasplit[6]);
                 }
+                readData.Close();
             }
         }
     }
